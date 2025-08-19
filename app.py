@@ -1,17 +1,21 @@
+readme_content = """
+# Calculadora de Taxa de Deslocamento
 
-import streamlit as st
+Este projeto é um aplicativo web desenvolvido com **Streamlit** que permite calcular o valor da taxa de deslocamento de um serviço com base na distância entre o endereço informado pelo usuário e um ponto fixo localizado em **Chapecó - SC**.
 
-st.set_page_config(page_title="Calculadora de Taxa de Deslocamento", page_icon="🚚")
+## 🚀 Funcionalidades
 
-st.title("Calculadora de Taxa de Deslocamento 🚚")
+- O usuário insere um **endereço completo** (rua, bairro, cidade).
+- O app converte esse endereço em **coordenadas geográficas** (latitude e longitude).
+- Calcula a **distância em quilômetros** entre o endereço informado e o ponto fixo:  
+  `Latitude: -27.082740`  
+  `Longitude: -52.634639`
+- Considera **ida e volta** na distância total.
+- Aplica o valor de **R$2,00 por km** para calcular a taxa de deslocamento.
+- Exibe o valor final da taxa de forma clara e formatada.
 
-st.write("Informe a distância em quilômetros para calcular o valor da taxa de deslocamento (ida e volta).")
-st.write("Valor considerado: **R$2,00 por km** (ida e volta = R$2,00 por km).")
+## 📍 Ponto de partida fixo
 
-# Entrada da distância
-distancia_km = st.number_input("Distância (em km)", min_value=0.0, step=0.1)
+Todos os cálculos são feitos com base no seguinte ponto de origem:
 
-# Botão para calcular
-if st.button("Calcular Taxa"):
-    taxa_total = distancia_km * 4  # ida e volta com R$2,00 por km
-    st.success(f"💰 Valor total da taxa de deslocamento: R${taxa_total:,.2f}")
+
